@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  reportservice:
+    image: reportservice
+    profiles:
+      - backend
+    build:
+      context: .
+      dockerfile: ReportService/Dockerfile
+  
+  org-db:
+    image: postgres:${POSTGRES_VERSION}
+    container_name: org-db
+    profiles:
+      - db
+    restart: on-failure
+    volumes:
+      - org_db:/var/lib/postgresql/data
+
+volumes:
+  org_db: {}

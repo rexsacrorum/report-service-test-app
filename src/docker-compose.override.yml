@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  reportservice:
+    environment:
+      - ASPNETCORE_ENVIRONMENT
+      - ASPNETCORE_URLS
+      - StartupOptions__PostgresConnectionString=Host=org-db;Port=5432;Database=org-db;Username=postgres;Password=Yr5JDjfl1D7i0D3k
+      - StartupOptions__HrApiUrl=http://localhost/api/debug/
+      - StartupOptions__AccountingApiUrl=http://localhost/api/debug/
+    ports:
+      - "5220:80"
+
+  org-db:
+    ports:
+      - '5221:5432'
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}

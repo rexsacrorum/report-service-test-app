@@ -1,0 +1,21 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:61377/",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "ReportService": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "api/Reports/2024/2",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:61378"
+    }
+  }
+}
